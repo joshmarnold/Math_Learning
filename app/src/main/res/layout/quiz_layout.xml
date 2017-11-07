@@ -7,28 +7,33 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
+        android:id="@+id/question_text_view"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:background="@android:color/holo_orange_light"
         android:gravity="center"
         android:padding="10dp"
-        android:text="This is the question area."
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="0dp" />
+        android:paddingStart="30dp"
+        android:text="This is the question area. bleh bleh bleh bleh bleh bleh"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/menu_spinner" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/submit_button"
         android:layout_width="241dp"
         android:layout_height="50dp"
         android:layout_marginTop="8dp"
         android:text="Submit"
         android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+        app:layout_constraintTop_toBottomOf="@+id/answer_radioGroup"
         tools:layout_editor_absoluteX="8dp" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/answer_text_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
@@ -40,19 +45,19 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/submit_button" />
 
     <RadioGroup
-        android:id="@+id/radioGroup"
+        android:id="@+id/answer_radioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toBottomOf="@+id/question_text_view">
 
         <RadioButton
-            android:id="@+id/radioButton8"
+            android:id="@+id/answer1_radioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -60,7 +65,7 @@
             android:textSize="20sp" />
 
         <RadioButton
-            android:id="@+id/radioButton7"
+            android:id="@+id/answer2_radioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -68,7 +73,7 @@
             android:textSize="20sp" />
 
         <RadioButton
-            android:id="@+id/radioButton6"
+            android:id="@+id/answer3_radioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -76,11 +81,19 @@
             android:textSize="20sp" />
 
         <RadioButton
-            android:id="@+id/radioButton5"
+            android:id="@+id/answer4_radioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Answer four"
             android:textSize="20sp" />
     </RadioGroup>
+
+    <Spinner
+        android:id="@+id/menu_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>
