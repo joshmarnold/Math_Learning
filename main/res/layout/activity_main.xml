@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/backgroundColor"
+    tools:context="edu.mtsu.csci3033.groupproject.MainActivity"
+    android:weightSum="1">
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:paddingLeft="@dimen/titlePaddingLeft"
+        android:text="@string/titleTextView"
+        android:textAlignment="textStart"
+        android:textColor="@color/titleColor"
+        android:textSize="@dimen/titleTextSize"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/piImageView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.545" />
+
+    <ImageView
+        android:id="@+id/piImageView"
+        android:layout_width="match_parent"
+        android:layout_height="216dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:srcCompat="@drawable/img1"
+        tools:layout_editor_absoluteY="66dp" />
+
+    <TextView
+        android:id="@+id/levelSelectTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:paddingLeft="@dimen/titlePaddingLeft"
+        android:text="@string/levelSelectTextView"
+        android:textColor="@color/titleColor"
+        android:textSize="@dimen/levelSelectTextSize"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/piImageView" />
+
+    <LinearLayout
+        android:id="@+id/buttonLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="-1dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/addtionLvlButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/buttonMarginLeft"
+            android:layout_marginRight="@dimen/buttonMarginRight"
+            android:layout_weight="1"
+            android:background="@android:color/holo_red_light"
+            android:elevation="0dp"
+            android:onClick="gotoAddition"
+            android:text="@string/additionLvlButtonText"
+            android:textSize="@dimen/LvlSelectTextSize"
+            app:layout_constraintRight_toLeftOf="@+id/subtractionLvlButton"
+            tools:layout_editor_absoluteY="349dp" />
+
+        <Button
+            android:id="@+id/subtractionLvlButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/buttonMarginRight"
+            android:layout_weight="1"
+            android:background="@android:color/holo_green_dark"
+            android:onClick="gotoSubtraction"
+            android:text="@string/subtractionLvlButtonText"
+            android:textSize="@dimen/minusLvlSelectTextSize"
+            app:layout_constraintRight_toLeftOf="@+id/multiplicationLvlButton"
+            app:layout_constraintTop_toBottomOf="@+id/levelSelectTextView" />
+
+        <Button
+            android:id="@+id/multiplicationLvlButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/buttonMarginRight"
+            android:layout_marginTop="-2dp"
+            android:layout_weight="1"
+            android:background="@android:color/holo_orange_dark"
+            android:onClick="gotoMultiplication"
+            android:text="@string/multiplicationLvlButtonText"
+            tools:layout_editor_absoluteX="248dp"
+            tools:layout_editor_absoluteY="349dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/difficultyTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:paddingLeft="@dimen/difficultyTitlePaddingLeft"
+        android:text="@string/difficultyTextView"
+        android:textColor="@color/titleColor"
+        android:textSize="@dimen/difficultyTextSize"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/subtractionLvlButton"
+        tools:layout_editor_absoluteX="134dp" />
+
+    <LinearLayout
+        android:id="@+id/seekbarLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <SeekBar
+            android:id="@+id/difficultySeekBar"
+            android:layout_width="@dimen/seekbarWidth"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="0.38"
+            android:max="10"
+            android:min="1"
+            android:progress="5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/subtractionLvlButton"
+            app:layout_constraintVertical_bias="0.517" />
+
+        <TextView
+            android:id="@+id/displayDifficultytextView"
+            android:layout_width="106dp"
+            android:layout_height="21dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="0.21"
+            android:text="@string/difficultySeekbarTextView"
+            android:textAlignment="viewStart"
+            android:textColor="@color/titleColor"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/difficultySeekBar"
+            app:layout_constraintTop_toBottomOf="@+id/addtionLvlButton"
+            app:layout_constraintVertical_bias="0.511" />
+
+    </LinearLayout>
+
+</LinearLayout>

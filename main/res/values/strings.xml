@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">GroupProject</string>
+    <string name="titleTextView">Piece of PI</string>
+    <string name="levelSelectTextView">Level Select</string>
+    <string name="difficultyTextView">Difficulty</string>
+    <string name="multiplicationLvlButtonText">x</string>
+    <string name="additionLvlButtonText">+</string>
+    <string name="subtractionLvlButtonText">-</string>
+    <string name="difficultySeekbarTextView">5</string>
+
+</resources>
